@@ -62,7 +62,7 @@ public class ConnectionServer implements Runnable {
 	private static int connKind = 0;
 	private static String httpStr = "http://localhost/fishManWebService";
 	public static boolean conn = true;
-	
+	  
 	
 	String loginAccessjsp= "/loginAccess.jsp";
 	String getGameInfjsp= "/getGameInf.jsp";
