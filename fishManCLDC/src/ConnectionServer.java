@@ -59,8 +59,16 @@ public class ConnectionServer implements Runnable {
 	private static boolean connection = false;//是否要與Server連線
 	private static String tmp = "";
 	private static int connKind = 0;
-	private static String httpStr = "http://210.71.20.126/SOT-Server/jsp_sql";
+	private static String httpStr = "http://localhost/fishManWebService";
 	public static boolean conn = true;
+	
+	
+	String loginAccessjsp= "/loginAccess.jsp";
+	String getGameInfjsp= "/getGameInf.jsp";
+	String setGameInfjsp= "/setGameInf.jsp";
+	String updateMapjsp= "/updateMap.jsp";
+	String updateEventjsp= "/updateEvent.jsp";
+	
 	
 	public ConnectionServer(){
 		try{
@@ -225,22 +233,21 @@ public class ConnectionServer implements Runnable {
 				if(!connection){
 					try{
 						Thread.sleep(100);
-					}catch(Exception e){}
+					}catch(Exception e){e.printStackTrace();}
 					continue;
 				}else{
 					connFin = false;
 				}
 				if(connKind==0){//登入
-					connServ = (HttpConnection)Connector.open(httpStr + "/loginAccess.jsp"+connStr);
+					connServ = (HttpConnection)Connector.open(httpStr + loginAccessjsp +connStr);
 				}else if(connKind==1){//登入成功,抓取目前主角狀態
-					//System.out.println(httpStr + "/inputName.jsp"+connStr);
-					connServ = (HttpConnection)Connector.open(httpStr + "/getGameInf.jsp"+connStr);
+					connServ = (HttpConnection)Connector.open(httpStr + getGameInfjsp +connStr);
 				}else if(connKind==2){//更新主角資料
-					connServ = (HttpConnection)Connector.open(httpStr + "/setGameInf.jsp"+connStr);
+					connServ = (HttpConnection)Connector.open(httpStr + setGameInfjsp +connStr);
 				}else if(connKind==3){
-					connServ = (HttpConnection)Connector.open(httpStr + "/updateMap.jsp"+connStr);
+					connServ = (HttpConnection)Connector.open(httpStr + updateMapjsp +connStr);
 				}else if(connKind==4){
-					connServ = (HttpConnection)Connector.open(httpStr + "/updateEvent.jsp"+connStr);
+					connServ = (HttpConnection)Connector.open(httpStr + updateEventjsp+connStr);
 				}
 				if(connServ.getResponseCode()==HttpConnection.HTTP_OK){
 					tmp = "";
@@ -267,11 +274,11 @@ public class ConnectionServer implements Runnable {
 						}
 						if(connServ != null)
 							connServ.close();
-					}
-				}
+					}// end of finally
+				}// end of ifFISHMAN
 				else
 					requestStr = "No Connection";
-			}
+			}//end of while
 		}
 		catch(Exception e){e.printStackTrace();}
 	}
