@@ -49,14 +49,14 @@ public class storyEven
 	private String evenBuffer;//暫存事件進度
 	private RoleDataValue mainValue;//主角的各種狀態值
 	private map mapImfor;//地圖資訊的指標
-	private wordLayerCreate makeWord;
+	private worldLayerCreate makeWord;
 	private mapCanvars myMapCanvars;
 	
 	private int talkAbout = 1;
 	private boolean stop[];
 	private boolean talkLevel = false;
 	
-	public storyEven(mapCanvars myMapCanvars, RoleDataValue mainValue, map mapImfor, wordLayerCreate makeWord, int evenPoint)
+	public storyEven(mapCanvars myMapCanvars, RoleDataValue mainValue, map mapImfor, worldLayerCreate makeWord, int evenPoint)
 	{
 		this.mainValue = mainValue;
 		this.mapImfor = mapImfor;

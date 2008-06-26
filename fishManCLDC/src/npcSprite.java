@@ -51,11 +51,11 @@ public class npcSprite
 	private int evenPoint;//事件流程點，故事順序
 	private Image npcImage;//NPC的顯示圖片
 	private Sprite npcSprite[];//NPC顯示用Sprite
-	private wordLayerCreate makeWord;//wordLayerCreate的指標索引
+	private worldLayerCreate makeWord;//wordLayerCreate的指標索引
 	private map mapImfor;//map的指標索引
 	
 	//無引數建構值
-	public npcSprite(wordLayerCreate makeWord, map mapImfor)
+	public npcSprite(worldLayerCreate makeWord, map mapImfor)
 	{
 		setEvenPoint(0);
 		this.makeWord = makeWord;

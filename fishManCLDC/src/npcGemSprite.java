@@ -57,11 +57,11 @@ public class npcGemSprite
 	private Image gemImage;//寶箱的顯示圖片
 	private Sprite npcSprite[];//NPC顯示用Sprite
 	private Sprite gemSprite[];//顯示寶箱的Sprite
-	private wordLayerCreate makeWord;//wordLayerCreate的指標索引
+	private worldLayerCreate makeWord;//wordLayerCreate的指標索引
 	private map mapImfor;//map的指標索引
 	
 	//無引數建構值
-	public npcGemSprite(wordLayerCreate makeWord, map mapImfor, int evenPoint)
+	public npcGemSprite(worldLayerCreate makeWord, map mapImfor, int evenPoint)
 	{
 		setEvenPoint(evenPoint);
 		this.makeWord = makeWord;

@@ -48,7 +48,7 @@ import javax.microedition.lcdui.game.*;
 public class mapCanvars extends GameCanvas implements Runnable
 {
 	static map mapImfor;//儲存地圖的資訊，陣列長度、行數、列數、-1值、起始座標
-	static wordLayerCreate makeWord;//wordLayerCreate繼承LayerManager並實作了TiledLayer and Sprite
+	static worldLayerCreate makeWord;//wordLayerCreate繼承LayerManager並實作了TiledLayer and Sprite
 	static npcGemSprite makeNpcGemSprite;
 	static storyEven createStory;//故事事件的流程
 	//*******主角資料*******//
@@ -150,7 +150,7 @@ public class mapCanvars extends GameCanvas implements Runnable
 		
 		setEvenPoint(0);
 
-		makeWord = new wordLayerCreate(this.mainValue, this.evenPoint);//呼叫無引數的建構值
+		makeWord = new worldLayerCreate(this.mainValue, this.evenPoint);//呼叫無引數的建構值
 		mapImfor = makeWord.getMapClass();
 		createStory = new storyEven(this, this.mainValue, this.mapImfor,  this.makeWord, this.evenPoint);
 		checkSprite = makeWord.getCheckSprite();
@@ -335,7 +335,7 @@ public class mapCanvars extends GameCanvas implements Runnable
   		
 		//********按鍵偵測********//
 		private void processInput()//********受evenPoint影響的Method()********//
-		{	
+		{
 	        final int keyState = this.getKeyStates();
 	        
 	           //當有商店觸發時-----------------------------------------------------------------------------
@@ -1107,7 +1107,7 @@ public class mapCanvars extends GameCanvas implements Runnable
 		}
 		
 		//********取得wordLayerCreate的class********//
-		public wordLayerCreate getMakeWordClass()
+		public worldLayerCreate getMakeWordClass()
 		{
 			return makeWord;
 		}
