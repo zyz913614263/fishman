@@ -15,9 +15,10 @@
 *			   		資料庫設計
 *			   		程式系統整合
 *
-*      郭宗穎     負責工作：
+*      郭宗穎、林義翔     負責工作：
 * 					地圖程式設計
 *			   		故事流程程式設計
+*		
 *
 *      黃肅純     負責工作：
 * 					美術設計
@@ -48,10 +49,19 @@ import javax.microedition.media.MediaException;
 
 class BackupMusic{
 	private static Player backmusic = null;
-	private static Player backsound = null, selectsound = null, pushsound = null, 
-			battleMusic = null, atksound = null, monstersound = null, upLevelsound = null, 
-			getItemsound = null, monsterdiesound = null, runawaysound = null,buysound = null,
-			monsterAtkSound = null, comboSound = null;
+	private static Player backsound = null ;
+	private static Player selectsound = null ;
+	private static Player pushsound = null ;
+	private static Player battleMusic = null ;
+	private static Player atksound = null ;
+	private static Player monstersound = null ;
+	private static Player upLevelsound = null ;
+	private static Player getItemsound = null ;
+	private static Player monsterdiesound = null ;
+	private static Player runawaysound = null ;
+	private static Player buysound = null ;
+	private static Player monsterAtkSound = null ;
+	private static Player comboSound = null ;
 	private static String musicKind = "x-wav";
 	private static String musicSecName = "wav";
 	private boolean stopMusic = false;
