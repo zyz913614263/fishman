@@ -46,7 +46,7 @@ import javax.microedition.lcdui.game.*;
 import javax.microedition.lcdui.Image;
 import java.io.*;
 
-public class wordLayerCreate extends LayerManager
+public class worldLayerCreate extends LayerManager
 {
 	//*******實作TiledLayer*******//
 	private TiledLayer moveBackLayer;//可行走之地圖
@@ -86,7 +86,7 @@ public class wordLayerCreate extends LayerManager
 	private int oldPoint;
 	
 	//*******建構值*******//
-	public wordLayerCreate(RoleDataValue RoleDataValue, int evenPoint)
+	public worldLayerCreate(RoleDataValue RoleDataValue, int evenPoint)
 	{
 		this.RoleDataValue = RoleDataValue;
 		//setEvenPoint(RoleDataValue.roleMap);
