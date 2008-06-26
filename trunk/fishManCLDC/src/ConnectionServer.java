@@ -63,7 +63,7 @@ public class ConnectionServer implements Runnable {
 	private static String httpStr = "http://localhost/fishManWebService";
 	public static boolean conn = true;
 	private static String xlinxMark = "http://localhost/fishManWebService";  
-	
+	private static String xlinxMark2 = "http://localhost/fishManWebService";
 	String loginAccessjsp= "/loginAccess.jsp";
 	String getGameInfjsp= "/getGameInf.jsp";
 	String setGameInfjsp= "/setGameInf.jsp";
