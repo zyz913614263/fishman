@@ -8,20 +8,17 @@
 *                   美術設計
 *                   系統整合
 * 
-*隊員：林義翔     負責工作：
-*					遊戲介面程式設計
-*			   		手機端資料庫設計
-*			   		資料庫設計
-*			   		程式系統整合
+*隊員：
 *	   鍾易峻     負責工作：
 *					遊戲介面程式設計
 *			   		手機端資料庫設計
 *			   		資料庫設計
 *			   		程式系統整合
 *
-*    郭宗穎     負責工作：
+*      郭宗穎、林義翔     負責工作：
 * 					地圖程式設計
 *			   		故事流程程式設計
+*		
 *
 *      黃肅純     負責工作：
 * 					美術設計
@@ -68,7 +65,7 @@ public class GameMain extends MIDlet{
 		display = Display.getDisplay(this);
 		//roleData = new RoleDataValue();
 		conn  = new ConnectionServer();
-	}
+	} 
 
 	//啟動手機
 	public void startApp() throws MIDletStateChangeException {
@@ -132,7 +129,6 @@ public class GameMain extends MIDlet{
 				indexarray[i]=index;
 			}
 		}
-		
 		index=0;
 		for(int i=0;i<count-1;i++){
 			strsplit[i] = str.substring(index, indexarray[i]-1);

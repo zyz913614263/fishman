@@ -15,9 +15,10 @@
 *			   		資料庫設計
 *			   		程式系統整合
 *
-*      郭宗穎     負責工作：
+*      郭宗穎、林義翔     負責工作：
 * 					地圖程式設計
 *			   		故事流程程式設計
+*		
 *
 *      黃肅純     負責工作：
 * 					美術設計
@@ -148,7 +149,8 @@ public class RoleDataValue {
 
 	public static Enumeration enu = null;
 
-	private static String tmp[], tmp_[] = null;
+	private static String tmp[];
+	private static String tmp_[] = null ;
 
 	private static byte bytetmp[] = null;
 

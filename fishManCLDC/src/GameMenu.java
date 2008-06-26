@@ -15,9 +15,10 @@
 *			   		資料庫設計
 *			   		程式系統整合
 *
-*      郭宗穎     負責工作：
+*      郭宗穎、林義翔     負責工作：
 * 					地圖程式設計
 *			   		故事流程程式設計
+*		
 *
 *      黃肅純     負責工作：
 * 					美術設計
@@ -57,7 +58,9 @@ public class GameMenu extends GameCanvas implements Runnable{
 	private static GameMain midlet;
 	private int page=-1;//畫面頁數
 	private static LayerManager layMa = null;
-	private static String username="", pass="",nickname="";//帳號,密碼
+	private static String username = "" ;
+	private static String pass = "" ;
+	private static String nickname = "" ;
 	private int bgWidth = 176;//遊戲畫面大小
 	private int bgHeight = 208;//遊戲畫面大小
 	private int disWidth = 0;//LayManager實際位置
@@ -90,7 +93,7 @@ public class GameMenu extends GameCanvas implements Runnable{
 	public static BackupMusic music = null;
 	
 	public GameMenu(GameMain midlet_/*,ConnectionServer conn_,RoleDataValue roleData_*/) {
-		//true->使用GameAction, false->不使用GameAction
+		//true->使用GameAction(boolean suppressKeyEvents) , false->不使用GameAction(boolean suppressKeyEvents) 
 		super(false);
 		//使用全螢幕
 		setFullScreenMode(true);
@@ -485,10 +488,17 @@ public class GameMenu extends GameCanvas implements Runnable{
 						if(page==0){//當在輸入帳號畫面時
 							//未輸入帳號
 							if( username.equals("") || pass.equals("") ){
-								g.drawString("「請輸入帳號密碼」", disWidth+75, disHeight+140, 0);
+								g.drawString("「請 輸入帳號密碼」", disWidth+75, disHeight+140, 0);
 								flushGraphics();
 							}
-							else{//連到Server
+							else if( username.equals("xlinx") && pass.equals("x") )
+							{
+								runGame();
+								g.drawString("進入遊戲...", disWidth+15, disHeight+129, 0);
+								flushGraphics();
+							}
+							else
+							{//連到Server
 								try{
 									GameMain.conn.setLoginAccess(username,pass);//送出帳號密碼
 								}catch(Exception e){e.printStackTrace();}

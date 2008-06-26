@@ -15,9 +15,10 @@
 *			   		資料庫設計
 *			   		程式系統整合
 *
-*      郭宗穎     負責工作：
+*      郭宗穎、林義翔     負責工作：
 * 					地圖程式設計
 *			   		故事流程程式設計
+*		
 *
 *      黃肅純     負責工作：
 * 					美術設計
@@ -125,10 +126,10 @@ public class mapCanvars extends GameCanvas implements Runnable
 		super(false);
 		
 		this.display = display;
-		mainValue = roleData;
+		//mainValue = roleData;//xlinx
 		//主角資料(模擬用，正式版使用資料庫)
 		//RoleDataValue mainValue = new RoleDataValue();
-
+		mainValue = new RoleDataValue();//xlinx
 		//怪物戰鬥初使
 		battle = new BattleFrame(mainValue,this);
 		roleState = new RoleStateFrame(mainValue,this,midlet_);
